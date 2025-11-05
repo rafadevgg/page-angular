@@ -1,19 +1,37 @@
 .navbar-all {
-    background-color: #f75a5a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06)
 }
 
-.logo-imagem {
-    height: 50px;
-    width: 30px;
-    object-fit: cover;
-    margin-left: 5%;
+.navbar .form-control {
+    min-width: 260px
 }
 
-.buscar {
-    margin-right: 2%;
+.auth-buttons .btn {
+    height: 38px
 }
 
 .nav-link {
-    padding: 20px;
-    margin: 5px;
+    padding: 8px 12px;
+    color: #333
+}
+
+.nav-link.active {
+    font-weight: 600
+}
+
+@media (max-width:767px) {
+    .navbar .form-control {
+        min-width: 140px
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+        gap: 6px
+    }
 }

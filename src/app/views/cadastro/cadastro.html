@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h2>Cadastro de Usuário</h2>
+        <form (submit)="$event.preventDefault(); cadastrar()">
+            <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <input [(ngModel)]="nome" name="nome" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Data de Nascimento</label>
+                <input [(ngModel)]="dataNascimento" name="dataNascimento" type="date" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Endereço</label>
+                <input [(ngModel)]="endereco" name="endereco" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input [(ngModel)]="email" name="email" type="email" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Senha</label>
+                <input [(ngModel)]="senha" name="senha" type="password" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Confirmar Senha</label>
+                <input [(ngModel)]="confirmar" name="confirmar" type="password" class="form-control" />
+            </div>
+
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </form>
+    </div>
+</div>

@@ -2,8 +2,6 @@
 
     <div class="navbar-all container-fluid">
 
-        <img class="logo-imagem" src="logo.png">
-
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 
@@ -11,30 +9,32 @@
 
         </button>
 
-        <div class="collapse navbar-collapse flex-column align-items-center justify-content mb-2 px-2" id="navbarNav">
-
-            <ul class="navbar-nav">
-
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Início</a>
+                    <a class="nav-link active" aria-current="page" routerLink="/">Início</a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Fale Conosco</a>
+                    <a class="nav-link" routerLink="/">Produtos</a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Suporte Hogwarts</a>
+                    <a class="nav-link" routerLink="/sobre">Sobre</a>
                 </li>
-
             </ul>
-        </div>
 
-        <form class="buscar d-flex mb-2 mt-0" role="search" (submit)="onBuscar(); $event.preventDefault()">
-            <input [(ngModel)]="searchTerm" name="search" class="form-control me-2" type="search"
-                placeholder="Buscar produto..." aria-label="Search" />
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
+            <div class="d-flex align-items-center ms-auto gap-2">
+                <form class="d-flex align-items-center" (submit)="onBuscar(); $event.preventDefault()">
+                    <input [(ngModel)]="searchTerm" (input)="onBuscar()" name="search" class="form-control me-2"
+                        type="search" placeholder="Buscar produto..." aria-label="Search" />
+                    <button class="btn btn-outline-secondary me-2" type="button" (click)="clearSearch()">Limpar</button>
+                </form>
+
+                <div class="auth-buttons d-flex">
+                    <a class="btn btn-outline-primary me-2" routerLink="/login">Entrar</a>
+                    <a class="btn btn-primary" routerLink="/cadastro">Cadastrar</a>
+                </div>
+            </div>
+        </div>
 
     </div>
 

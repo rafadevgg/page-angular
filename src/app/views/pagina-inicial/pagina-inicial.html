@@ -1,0 +1,18 @@
+<div class="row mb-3">
+    <div class="col-md-8">
+        <form class="d-flex" (submit)="$event.preventDefault()">
+            <label class="me-2 align-self-center" style="min-width:95px">Ordenar por:</label>
+            <select [(ngModel)]="sortOrder" name="sort" class="form-select" style="width: 220px">
+                <option value="">Padrão</option>
+                <option value="asc">Preço: Menor para Maior</option>
+                <option value="desc">Preço: Maior para Menor</option>
+            </select>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let produto of produtosBuscados">
+        <app-cards [produto]="produto"></app-cards>
+    </div>
+</div>
